@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tgr = UITapGestureRecognizer(target: self, action: #selector(AppDelegate.playStream))
         window?.addGestureRecognizer(tgr)
         
-        playStream()
         return true
     }
     
