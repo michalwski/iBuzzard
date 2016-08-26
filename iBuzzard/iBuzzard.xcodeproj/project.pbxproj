@@ -12,6 +12,8 @@
 		AF2DB9901D703E6700376348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2DB98E1D703E6700376348 /* Main.storyboard */; };
 		AF2DB9921D703E6700376348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF2DB9911D703E6700376348 /* Assets.xcassets */; };
 		AF2DB9951D703E6700376348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2DB9931D703E6700376348 /* LaunchScreen.storyboard */; };
+		AF75E4A41D706324000FC0B2 /* URLRequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */; };
+		AF75E4A61D706349000FC0B2 /* APNSTokenReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AF2DB9911D703E6700376348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF2DB9941D703E6700376348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF2DB9961D703E6700376348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestComponents.swift; sourceTree = "<group>"; };
+		AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNSTokenReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				AF2DB9911D703E6700376348 /* Assets.xcassets */,
 				AF2DB9931D703E6700376348 /* LaunchScreen.storyboard */,
 				AF2DB9961D703E6700376348 /* Info.plist */,
+				AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */,
+				AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */,
 			);
 			path = iBuzzard;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			files = (
 				AF2DB98D1D703E6700376348 /* ViewController.swift in Sources */,
 				AF2DB98B1D703E6700376348 /* AppDelegate.swift in Sources */,
+				AF75E4A61D706349000FC0B2 /* APNSTokenReceiver.swift in Sources */,
+				AF75E4A41D706324000FC0B2 /* URLRequestComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +265,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iBuzzard",
+				);
 				INFOPLIST_FILE = iBuzzard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ibuzzard;
@@ -268,6 +280,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iBuzzard",
+				);
 				INFOPLIST_FILE = iBuzzard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ibuzzard;

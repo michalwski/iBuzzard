@@ -61,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         print("Device Token:", tokenString)
+        APNSTokenReceiver().sendToken(tokenString)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -79,10 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         playStream()
     }
     
-    func sendToken(token: String) {
-        let deviceID = "2af328b8d5e70039e858a99a2495210d98fb48563211d8b14a576cda6af9cd19"
-        
-    }
+
     
     func playStream() {
         let player = AVPlayer(URL: streamURL)
