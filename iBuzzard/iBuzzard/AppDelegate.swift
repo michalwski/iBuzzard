@@ -7,40 +7,92 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let streamURL = NSURL(string: "https://tungsten.aaplimg.com/VOD/bipbop_adv_example_v2/master.m3u8")!
+    //"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        //handleAPN([:])
+        
+        
+        if let notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] {
+            let aps = notification["aps"] as! [String: AnyObject]
+            handleAPN(aps)
+            return true
+        }
+        
+        registerForPushNotifications(application)
+        
+        window?.rootViewController = UIViewController()
+        window?.makeKeyAndVisible()
+        
+        let tgr = UITapGestureRecognizer(target: self, action: #selector(AppDelegate.playStream))
+        window?.addGestureRecognizer(tgr)
+        
+        playStream()
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        print("Device Token:", tokenString)
     }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
     }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        let aps = userInfo["aps"] as! [String: AnyObject]
+        handleAPN(aps)
     }
+    
+    func handleAPN(aps: [String: AnyObject]) {
+        print("received remote notif \(aps)")
+        
+        
+        playStream()
+    }
+    
+    func sendToken(token: String) {
+        let deviceID = "2af328b8d5e70039e858a99a2495210d98fb48563211d8b14a576cda6af9cd19"
+        
+    }
+    
+    func playStream() {
+        let player = AVPlayer(URL: streamURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
 
-
+        
+        window!.rootViewController?.presentViewController(playerViewController, animated: true, completion: { 
+            playerViewController.player!.play()
+        })
+    }
 }
 
