@@ -16,11 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buzzard.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IYa-fa-yMp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IYa-fa-yMp" secondAttribute="bottom" id="jt6-Oa-KqH"/>
+                            <constraint firstItem="IYa-fa-yMp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kbZ-8C-JRe"/>
+                            <constraint firstAttribute="trailing" secondItem="IYa-fa-yMp" secondAttribute="trailing" id="sWD-sh-gg0"/>
+                            <constraint firstItem="IYa-fa-yMp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ysO-zh-cIe"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="361" y="399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="buzzard.jpg" width="900" height="1269"/>
+    </resources>
 </document>

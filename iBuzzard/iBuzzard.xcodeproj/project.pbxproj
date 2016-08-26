@@ -15,6 +15,7 @@
 		AF75E4A41D706324000FC0B2 /* URLRequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */; };
 		AF75E4A61D706349000FC0B2 /* APNSTokenReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */; };
 		AF75E4AC1D707382000FC0B2 /* buzzard.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF75E4AB1D707382000FC0B2 /* buzzard.wav */; };
+		AF75E4AE1D707B4B000FC0B2 /* buzzard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75E4AD1D707B4B000FC0B2 /* buzzard.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestComponents.swift; sourceTree = "<group>"; };
 		AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNSTokenReceiver.swift; sourceTree = "<group>"; };
 		AF75E4AB1D707382000FC0B2 /* buzzard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzard.wav; sourceTree = "<group>"; };
+		AF75E4AD1D707B4B000FC0B2 /* buzzard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buzzard.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		AF2DB9891D703E6700376348 /* iBuzzard */ = {
 			isa = PBXGroup;
 			children = (
+				AF75E4AD1D707B4B000FC0B2 /* buzzard.jpg */,
 				AF75E4AB1D707382000FC0B2 /* buzzard.wav */,
 				AF2DB98A1D703E6700376348 /* AppDelegate.swift */,
 				AF2DB98C1D703E6700376348 /* ViewController.swift */,
@@ -140,6 +143,7 @@
 				AF2DB9951D703E6700376348 /* LaunchScreen.storyboard in Resources */,
 				AF75E4AC1D707382000FC0B2 /* buzzard.wav in Resources */,
 				AF2DB9921D703E6700376348 /* Assets.xcassets in Resources */,
+				AF75E4AE1D707B4B000FC0B2 /* buzzard.jpg in Resources */,
 				AF2DB9901D703E6700376348 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

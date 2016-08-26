@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         registerForPushNotifications(application)
         
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         
         let tgr = UITapGestureRecognizer(target: self, action: #selector(AppDelegate.playStream))
