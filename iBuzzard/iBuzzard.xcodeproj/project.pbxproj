@@ -16,6 +16,8 @@
 		AF75E4A61D706349000FC0B2 /* APNSTokenReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */; };
 		AF75E4AC1D707382000FC0B2 /* buzzard.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF75E4AB1D707382000FC0B2 /* buzzard.wav */; };
 		AF75E4AE1D707B4B000FC0B2 /* buzzard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75E4AD1D707B4B000FC0B2 /* buzzard.jpg */; };
+		AF75E4B01D707E6F000FC0B2 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4AF1D707E6F000FC0B2 /* HistoryTableViewController.swift */; };
+		AF75E4B21D70823E000FC0B2 /* VODLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75E4B11D70823E000FC0B2 /* VODLister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APNSTokenReceiver.swift; sourceTree = "<group>"; };
 		AF75E4AB1D707382000FC0B2 /* buzzard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buzzard.wav; sourceTree = "<group>"; };
 		AF75E4AD1D707B4B000FC0B2 /* buzzard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = buzzard.jpg; sourceTree = "<group>"; };
+		AF75E4AF1D707E6F000FC0B2 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		AF75E4B11D70823E000FC0B2 /* VODLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VODLister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +71,13 @@
 				AF2DB98A1D703E6700376348 /* AppDelegate.swift */,
 				AF2DB98C1D703E6700376348 /* ViewController.swift */,
 				AF2DB98E1D703E6700376348 /* Main.storyboard */,
+				AF75E4AF1D707E6F000FC0B2 /* HistoryTableViewController.swift */,
 				AF2DB9911D703E6700376348 /* Assets.xcassets */,
 				AF2DB9931D703E6700376348 /* LaunchScreen.storyboard */,
 				AF2DB9961D703E6700376348 /* Info.plist */,
 				AF75E4A31D706324000FC0B2 /* URLRequestComponents.swift */,
 				AF75E4A51D706349000FC0B2 /* APNSTokenReceiver.swift */,
+				AF75E4B11D70823E000FC0B2 /* VODLister.swift */,
 			);
 			path = iBuzzard;
 			sourceTree = "<group>";
@@ -155,10 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF75E4B21D70823E000FC0B2 /* VODLister.swift in Sources */,
 				AF2DB98D1D703E6700376348 /* ViewController.swift in Sources */,
 				AF2DB98B1D703E6700376348 /* AppDelegate.swift in Sources */,
 				AF75E4A61D706349000FC0B2 /* APNSTokenReceiver.swift in Sources */,
 				AF75E4A41D706324000FC0B2 /* URLRequestComponents.swift in Sources */,
+				AF75E4B01D707E6F000FC0B2 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

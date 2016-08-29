@@ -1,5 +1,5 @@
 //
-//  APNSTokenReceiver.swift
+//  VODLister.swift
 //  iBuzzard
 //
 //  Created by Krzysztof Profic on 26.08.2016.
@@ -8,15 +8,12 @@
 
 import Foundation
 
-class APNSTokenReceiver : NSObject {
-    private let baseURL = NSURL(string: "http://10.152.1.42:9000/")!
-    private var token: String!
-    private let deviceID = "2af328b8d5e70039e858a99a2495210d98fb48563211d8b14a576cda6af9cd19"   // TODO this should be generated and saved in keychain to ensure its unique across app instalations
+class VODLister : NSObject {
+    private let baseURL = NSURL(string: "https://10.152.1.17:9000/")!
     
     private var con: NSURLConnection!
     
-    func sendToken(token: String) {
-        self.token = token
+    func list() {
         let req = requestWithBaseURL(baseURL)
         
         con = NSURLConnection(request: req, delegate: self)
@@ -24,7 +21,7 @@ class APNSTokenReceiver : NSObject {
     }
 }
 
-extension APNSTokenReceiver : NSURLConnectionDataDelegate {
+extension VODLister : NSURLConnectionDataDelegate {
     func connection(connection: NSURLConnection, didFailWithError error: NSError) {
         print("failed \(error)")
     }
@@ -52,13 +49,13 @@ extension APNSTokenReceiver : NSURLConnectionDataDelegate {
         challenge.sender?.continueWithoutCredentialForAuthenticationChallenge(challenge)
     }
 }
-extension APNSTokenReceiver : URLRequestComponents {
+extension VODLister : URLRequestComponents {
     var path: String {
-        return "device_token"
+        return "/motion_vod"
     }
     
     var method: RequestMethod {
-        return .POST
+        return .GET
     }
     
     var queryItems: [String: String]? {
@@ -66,12 +63,7 @@ extension APNSTokenReceiver : URLRequestComponents {
     }
     
     var body: NSData? {
-        let obj = [
-            "device": deviceID,
-            "token": token,
-        ]
-        let data = try! NSJSONSerialization.dataWithJSONObject(obj, options: [])
-        return data
+        return nil
     }
     
     var headers: [String: String] {

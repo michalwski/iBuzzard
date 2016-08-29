@@ -12,7 +12,7 @@ import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let streamURL = NSURL(string: "https://tungsten.aaplimg.com/VOD/bipbop_adv_example_v2/master.m3u8")!
+    let streamURL = NSURL(string: "http://10.152.1.42:9000/videos/playlist.m3u8")!
     //"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
 
     var window: UIWindow?
